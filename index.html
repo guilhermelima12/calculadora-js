@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora</h1>
+        <div class="calculadora">
+            <div id="tela">
+                <p id="display"> </p>
+            </div>
+
+            <div class="buttons-container">
+            <button class="buttonN one" onclick="change('one')">1</button>
+            <button class="buttonN two" onclick="change('two')">2</button>
+            <button class="buttonN three" onclick="change('three')">3</button>
+            <button class="operador plus" onclick="change('plus')">+</button><br>
+
+            <button class="buttonN four" onclick="change('four')">4</button>
+            <button class="buttonN five" onclick="change('five')">5</button>
+            <button class="buttonN six" onclick="change('six')">6</button>
+            <button class="operador minus" onclick="change('minus')">-</button><br>
+
+            <button class="buttonN seven" onclick="change('seven')">7</button>
+            <button class="buttonN eight" onclick="change('eight')">8</button>
+            <button class="buttonN nine" onclick="change('nine')">9</button>
+            <button class="operador mult" onclick="change('mult')">*</button><br>
+
+            <button class="clean" onclick="change('clean')">c</button>
+            <button class="buttonN zero" onclick="change('zero')">0</button>
+            <button class="result" onclick="change('result')">=</button>
+            <button class="operador div" onclick="change('div')">/</button>
+            <button class="neg" onclick="change('neg')">-1</button>
+        </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
