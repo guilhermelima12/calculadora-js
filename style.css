@@ -35,17 +35,21 @@
 }
 
 .calculadora {
+    max-width: 100%;
     margin: 0 auto;
 }
 
 button {
     border: none;
-    margin: 2px;
-    padding: 10px;
+    margin: 5px;
     width: 49px;
     height: 50px;
     background-color: cadetblue;
     border-radius: 4px;
+}
+
+.hist {
+    width: 70px;
 }
 
 .buttons-container {

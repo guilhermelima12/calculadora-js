@@ -5,11 +5,13 @@ const buttonC = document.querySelector('.clean')
 const buttonO = document.querySelectorAll('.operador')
 const resultado = document.querySelector('.result')
 const negative = document.querySelector('.neg')
+const histButton = document.querySelector('.hist')
 let haveNumber = false
 let valueOne = '';
 let valueTwo = '';
 let result = '';
 let operador = '';
+let history = [];
 
 //Execução das funções.
 mapNumber()
@@ -17,6 +19,7 @@ oper()
 clean()
 calc()
 inverse()
+showHist()
 
 // função que seleciona o número e verifica se já tem um valor de outra conta realizada anteriormente
 function mapNumber() {
@@ -29,9 +32,11 @@ function mapNumber() {
                 display.innerHTML += numb.innerHTML
                 valueOne += numb.innerHTML
                 haveNumber = false
+                history.push(numb.innerHTML)
             } else {
                 display.innerHTML += numb.innerHTML
                 valueOne += numb.innerHTML
+                history.push(numb.innerHTML)
             }
 
         })
@@ -47,6 +52,7 @@ function oper() {
                 valueOne = ''
                 display.innerHTML = ''
                 operador = arg.innerHTML
+                history.push(arg.innerHTML)
             } else {
                 alert("Operação inválida!")
             }
@@ -62,6 +68,7 @@ function clean() {
         display.innerHTML = ''
         result = ''
         operador = ''
+        history = []
     })
 }
 
@@ -86,6 +93,8 @@ function calc() {
         operador = ''
         valueTwo = ''
         haveNumber = true
+        history.push('=')
+        history.push(result)
     })
 }
 
@@ -120,5 +129,17 @@ function inverse() {
     negative.addEventListener('click', () => {
         display.innerHTML *= (-1)
         valueOne *= (-1)
+    })
+}
+
+//Função que mostra o histórico do cálculo anterior
+function showHist() {
+    histButton.addEventListener('click', () => {
+        let hist = history.join('')
+        if (haveNumber) {
+            history = [];
+            history[0] = result;
+        }
+        alert(hist.toString())
     })
 }
