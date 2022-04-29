@@ -127,8 +127,11 @@ function div(arg) {
 // Função onde inverte o sinal do número apresentado no display
 function inverse() {
     negative.addEventListener('click', () => {
+        history.pop()
+        history.pop()
         display.innerHTML *= (-1)
         valueOne *= (-1)
+        history.push(valueOne)
     })
 }
 
